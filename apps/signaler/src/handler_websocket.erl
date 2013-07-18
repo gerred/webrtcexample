@@ -82,8 +82,8 @@ websocket_handle({text,Data}, Req, State) ->
 websocket_handle(_Any, Req, State) ->
     {ok, Req, State, hibernate}.
 
-websocket_info(_Info, Req, State) ->
-    {reply, {text,_Info}, Req, State, hibernate}.
+websocket_info(Info, Req, State) ->
+    {reply, {text,Info}, Req, State, hibernate}.
 
 websocket_terminate(_Reason, _Req, _State) ->
     ok.
